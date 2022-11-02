@@ -4,8 +4,14 @@ mat-toolbar {
   height: 5rem;
   background-color: $main-color;
 
-  h1 {
-    font-size: 2rem;
-    min-width: 200px;
+  .container {
+    display: flex;
+
+    h1 {
+      font-size: 2rem;
+      min-width: 200px;
+    }
   }
+
+
 }

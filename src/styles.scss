@@ -1,5 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
+// Variables
+
+
+$main-color: #ffc800;
+$second-color: #333333;
+
+
+$container: 1140px;
+$large: 992px;
+$less-large: 960px;
+$semi-tablet: 876px;
+$tablet: 768px;
+$less-tablet: 720px;
+$small-tablet: 620px;
+$semi-mobile: 576px;
+$medium: 540px;
+$almost-mobile: 430px;
+$mobile: 375px;
+$small-mobile: 330px;
+
 html,
 body {
   height: 100%;
@@ -10,22 +30,24 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-// Variables
+.container {
+  max-width: $container;
+  padding: 0 1rem;
 
+  @media (max-width: $large) {
+    max-width: $less-large;
+  }
 
-$main-color: #ffc800;
-$second-color: #333333;
+  @media (max-width: $tablet) {
+    max-width: $less-tablet;
+  }
 
+  @media (max-width: $semi-mobile) {
+    max-width: $medium;
+  }
 
-// $container: 1110px;
-// $large: 992px;
-// $less-large: 900px;
-// $semi-tablet: 876px;
-// $tablet: 768px;
-// $less-tablet: 680px;
-// $small-tablet: 620px;
-// $semi-mobile: 550px;
-// $medium: 480px;
-// $almost-mobile: 430px;
-// $mobile: 375px;
-// $small-mobile: 330px;
+  @media (max-width: $mobile) {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+}

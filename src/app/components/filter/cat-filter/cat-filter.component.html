@@ -1,3 +1,38 @@
-<p>
-  cat-filter works!
-</p>
+<mat-accordion class="filter-accordion">
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3 class="filter-tittle">Filters</h3>
+      </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form>
+      <div class="filter-fields">
+        <mat-form-field class="filter-breed" appearance="outline">
+          <mat-label>Choose a breed</mat-label>
+          <mat-select>
+            <mat-option>1</mat-option>
+            <mat-option>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="filter-count" appearance="outline">
+          <mat-label>Cats Count</mat-label>
+          <mat-select>
+            <mat-option>10</mat-option>
+            <mat-option>15</mat-option>
+            <mat-option>20</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="filter-buttons">
+        <button mat-raised-button color="accent">Clear</button>
+        <button mat-raised-button color="primary">Submit</button>
+      </div>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>

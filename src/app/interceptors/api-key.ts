@@ -14,6 +14,8 @@ import { environment } from 'src/environments/environment';
 export class ApiKeyInterceptor implements HttpInterceptor {
   constructor() {}
 
+  path: string = '/images/search';
+
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
@@ -22,7 +24,9 @@ export class ApiKeyInterceptor implements HttpInterceptor {
       .set('Content-Type', 'application/json')
       .set('x-api-key', environment.api_key);
 
-    const isApiUrl = request.url.startsWith(environment.api_base_url);
+    const isApiUrl = request.url.startsWith(
+      environment.api_base_url + this.path
+    );
     if (isApiUrl) {
       request = request.clone({
         headers: headers,

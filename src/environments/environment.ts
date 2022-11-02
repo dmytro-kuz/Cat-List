@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_base_url: 'https://api.thecatapi.com/v1/images/search',
+  api_base_url: 'https://api.thecatapi.com/v1',
   api_key:
     'live_RFd8bIrdPnvW1IGS9BPejRlVcTsekLHjvj2AV5avNZiBDGyiaXtPq2dhxiDbGjaC',
 };

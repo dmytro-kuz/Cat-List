@@ -1,0 +1,28 @@
+.filter-accordion {
+  display: flex;
+  justify-content: center;
+
+  mat-expansion-panel {
+    width: 500px;
+
+    .filter-tittle {
+      margin-top: 0.2rem;
+      font-size: 1.1rem;
+    }
+  }
+
+  .filter-fields {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .filter-buttons {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+      width: 100px;
+    }
+  }
+
+}
