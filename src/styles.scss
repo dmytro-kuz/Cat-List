@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Variables
+
+
+$main-color: #ffc800;
+$second-color: #333333;
+
+
+// $container: 1110px;
+// $large: 992px;
+// $less-large: 900px;
+// $semi-tablet: 876px;
+// $tablet: 768px;
+// $less-tablet: 680px;
+// $small-tablet: 620px;
+// $semi-mobile: 550px;
+// $medium: 480px;
+// $almost-mobile: 430px;
+// $mobile: 375px;
+// $small-mobile: 330px;
