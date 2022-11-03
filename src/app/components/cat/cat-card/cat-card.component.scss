@@ -9,7 +9,6 @@
   transition: 0.2s;
   z-index: 0;
   overflow: hidden;
-  cursor: pointer;
 
   @media (max-width: 580px) {
     width: 270px;
@@ -25,7 +24,7 @@
 
   &:hover {
     box-shadow: 0 5px 15px $main-color;
-    transform: scale(1.02);
+    transform: scale(1.1);
   }
 
   &::before {

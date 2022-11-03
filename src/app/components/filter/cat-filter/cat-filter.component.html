@@ -36,8 +36,15 @@
       </div>
 
       <div class="filter-buttons">
-        <button mat-raised-button color="accent">Clear</button>
-        <button mat-raised-button color="primary">Submit</button>
+        <button
+          type="button"
+          (click)="clearFilter()"
+          mat-raised-button
+          color="accent"
+        >
+          Clear filter
+        </button>
+        <button type="submit" mat-raised-button color="primary">Submit</button>
       </div>
     </form>
   </mat-expansion-panel>

@@ -3,4 +3,4 @@ export const defFilterValue = {
   breed_ids: null,
 };
 
-export const defLimits = [5, 10, 15, 20, 25, 30];
+export const defLimits = [2, 5, 7, 8, 9, 10, 15, 20];

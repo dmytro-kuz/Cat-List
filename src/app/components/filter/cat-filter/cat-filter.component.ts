@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Breed } from 'src/app/shared/interfaces/Breed';
-
+import { defFilterValue } from 'src/app/data/filterValue';
 import { Cat } from 'src/app/shared/interfaces/Cat';
 import { GetCats } from 'src/app/store/actions';
-import { getCatsList } from 'src/app/store/selectors';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 
 import { CatService } from '../../cat/cat.service';
 import { defLimits } from 'src/app/data/filterValue';
@@ -37,8 +36,16 @@ export class CatFilterComponent implements OnInit {
   initForm() {
     this.filterForm = this.formBuilder.group({
       breed: [],
-      limit: [this.limits[1]],
+      limit: [defFilterValue.limit],
     });
+  }
+
+  clearFilter() {
+    this.filterForm?.reset();
+    this.filterForm?.patchValue({
+      limit: [defFilterValue.limit],
+    });
+    this.store.dispatch(GetCats({ params: defFilterValue }));
   }
 
   onSubmit() {
