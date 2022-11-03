@@ -1,3 +1,4 @@
-<p>
-  cat-card works!
-</p>
+<div *ngIf="catCard" class="cat-card">
+  <img src="{{ catCard.url }}" alt="" />
+  <p>{{ catCard.id }}</p>
+</div>

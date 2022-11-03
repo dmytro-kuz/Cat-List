@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Cat } from 'src/app/shared/interfaces/Cat';
 
 @Component({
   selector: 'app-cat-card',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatCardComponent implements OnInit {
   constructor() {}
+
+  @Input() catCard?: Cat;
 
   ngOnInit() {}
 }
