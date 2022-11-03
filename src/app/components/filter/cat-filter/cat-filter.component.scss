@@ -14,6 +14,10 @@
   .filter-fields {
     display: flex;
     justify-content: space-between;
+
+    :first-child {
+      margin-right: 1rem;
+    }
   }
 
   .filter-buttons {

@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Breed } from 'src/app/shared/interfaces/Breed';
+
+import { Cat } from 'src/app/shared/interfaces/Cat';
+import { GetCats } from 'src/app/store/actions';
+import { getCatsList } from 'src/app/store/selectors';
+import { select, Store } from '@ngrx/store';
+
 import { CatService } from '../../cat/cat.service';
 import { defLimits } from 'src/app/data/filterValue';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cat-filter',
@@ -17,7 +23,8 @@ export class CatFilterComponent implements OnInit {
 
   constructor(
     private catService: CatService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private store: Store<{ catsList: Cat[] }>
   ) {}
 
   ngOnInit() {
@@ -34,5 +41,11 @@ export class CatFilterComponent implements OnInit {
     });
   }
 
-  onSubmit() {}
+  onSubmit() {
+    const filterValue = {
+      breed_ids: this.filterForm?.value.breed.id,
+      limit: this.filterForm?.value.limit,
+    };
+    this.store.dispatch(GetCats({ params: filterValue }));
+  }
 }

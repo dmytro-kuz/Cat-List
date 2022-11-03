@@ -20,7 +20,7 @@
         <mat-form-field class="filter-breed" appearance="outline">
           <mat-label>Choose a breed</mat-label>
           <mat-select formControlName="breed">
-            <mat-option *ngFor="let breed of breeds">
+            <mat-option [value]="breed" *ngFor="let breed of breeds">
               {{ breed.name }}
             </mat-option>
           </mat-select>
