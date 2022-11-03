@@ -41,18 +41,18 @@ export class CatFilterComponent implements OnInit {
   }
 
   clearFilter() {
-    this.filterForm?.reset();
-    this.filterForm?.patchValue({
-      limit: [defFilterValue.limit],
-    });
     this.store.dispatch(GetCats({ params: defFilterValue }));
+    this.filterForm?.reset();
+    this.initForm();
   }
 
   onSubmit() {
-    const filterValue = {
-      breed_ids: this.filterForm?.value.breed.id,
-      limit: this.filterForm?.value.limit,
-    };
-    this.store.dispatch(GetCats({ params: filterValue }));
+    if (this.filterForm?.value.breed) {
+      this.store.dispatch(GetCats({ params: this.filterForm.value }));
+    } else {
+      this.store.dispatch(
+        GetCats({ params: { limit: this.filterForm?.value.limit } })
+      );
+    }
   }
 }
