@@ -9,13 +9,15 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { catsReducer } from './store/reducers';
 import { CatsEffects } from './store/effects';
-
 import { AppComponent } from './app.component';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
+import { MatIconModule } from '@angular/material/icon';
 import { CatModule } from './components/cat.module';
-import { ApiKeyInterceptorProvider } from './interceptors/api-key';
+import { ApiKeyInterceptorProvider } from './interceptors/api-key.interceptor';
+import { LoaderInterceptorProvider } from './interceptors/loader.interceptor';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SpinnerComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -24,10 +26,11 @@ import { ApiKeyInterceptorProvider } from './interceptors/api-key';
     AppRoutingModule,
     HttpClientModule,
     CatModule,
+    MatIconModule,
     StoreModule.forRoot({ cats: catsReducer }),
     EffectsModule.forRoot([CatsEffects]),
   ],
-  providers: [ApiKeyInterceptorProvider],
+  providers: [ApiKeyInterceptorProvider, LoaderInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
