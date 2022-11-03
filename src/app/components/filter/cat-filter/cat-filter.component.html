@@ -10,28 +10,41 @@
       <mat-panel-description> </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <form>
+    <form
+      ng
+      *ngIf="filterForm"
+      [formGroup]="filterForm"
+      (ngSubmit)="onSubmit()"
+    >
       <div class="filter-fields">
         <mat-form-field class="filter-breed" appearance="outline">
           <mat-label>Choose a breed</mat-label>
-          <mat-select>
-            <mat-option>1</mat-option>
-            <mat-option>2</mat-option>
+          <mat-select formControlName="breed">
+            <mat-option [value]="breed" *ngFor="let breed of breeds">
+              {{ breed.name }}
+            </mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field class="filter-count" appearance="outline">
           <mat-label>Cats Count</mat-label>
-          <mat-select>
-            <mat-option>10</mat-option>
-            <mat-option>15</mat-option>
-            <mat-option>20</mat-option>
+          <mat-select formControlName="limit">
+            <mat-option [value]="item" *ngFor="let item of limits">{{
+              item
+            }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
 
       <div class="filter-buttons">
-        <button mat-raised-button color="accent">Clear</button>
-        <button mat-raised-button color="primary">Submit</button>
+        <button
+          type="button"
+          (click)="clearFilter()"
+          mat-raised-button
+          color="accent"
+        >
+          Clear filter
+        </button>
+        <button type="submit" mat-raised-button color="primary">Submit</button>
       </div>
     </form>
   </mat-expansion-panel>

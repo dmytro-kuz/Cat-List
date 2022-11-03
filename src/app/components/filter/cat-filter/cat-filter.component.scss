@@ -1,19 +1,23 @@
 .filter-accordion {
   display: flex;
   justify-content: center;
+  margin: 0 1rem;
 
   mat-expansion-panel {
-    width: 500px;
+    max-width: 500px;
 
-    .filter-tittle {
-      margin-top: 0.2rem;
-      font-size: 1.1rem;
+    h3 {
+      margin: 0;
     }
   }
 
   .filter-fields {
     display: flex;
     justify-content: space-between;
+
+    :first-child {
+      margin-right: 1rem;
+    }
   }
 
   .filter-buttons {

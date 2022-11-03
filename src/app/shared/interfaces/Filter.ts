@@ -1,4 +1,4 @@
 export interface Filter {
   limit: number;
-  breed: string | null;
+  breed_ids: string | null;
 }

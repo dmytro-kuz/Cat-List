@@ -1,2 +1,5 @@
-<p>cat-list works!</p>
-<app-cat-card></app-cat-card>
+<div class="cats-wrapper">
+  <div class="cats" *ngFor="let cat of catsList$ | async">
+    <app-cat-card [catCard]="cat"></app-cat-card>
+  </div>
+</div>

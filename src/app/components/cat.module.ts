@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CatCardComponent } from './cat/cat-card/cat-card.component';
 import { CatListComponent } from './cat/cat-list/cat-list.component';
@@ -19,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatSelectModule,
     MatExpansionModule,
     MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   declarations: [
     CatCardComponent,
