@@ -8,7 +8,7 @@ import {
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { api_base_url, api_key } from '../data/constants';
 
 @Injectable()
 export class ApiKeyInterceptor implements HttpInterceptor {
@@ -22,11 +22,9 @@ export class ApiKeyInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     const headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
-      .set('x-api-key', environment.api_key);
+      .set('x-api-key', api_key);
 
-    const isApiUrl = request.url.startsWith(
-      environment.api_base_url + this.path
-    );
+    const isApiUrl = request.url.startsWith(api_base_url + this.path);
     if (isApiUrl) {
       request = request.clone({
         headers: headers,
