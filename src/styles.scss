@@ -31,8 +31,9 @@ body {
 }
 
 .container {
-  max-width: $container;
+  width: $container;
   padding: 0 1rem;
+  margin: auto;
 
   @media (max-width: $large) {
     max-width: $less-large;
