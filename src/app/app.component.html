@@ -1,1 +1,4 @@
-<app-layout></app-layout>
+<div class="wrapper">
+  <app-spinner *ngIf="loading$ | async"></app-spinner>
+  <app-layout></app-layout>
+</div>
